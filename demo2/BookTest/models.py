@@ -13,5 +13,6 @@ class HeroInfo(models.Model):
     hname = models.CharField(max_length=20)
     hgender = models.BooleanField()
     hcontent = models.CharField(max_length=100)
+    hbook = models.ForeignKey('BookTest',on_delete=models.CASCADE)
     def __str__(self):
         return self.hname
