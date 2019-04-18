@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票首页</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>所有提问投票</h1>
+        <ul>
+            {% for q in questions %}
+                {#<li><a href="/vote/detail/{{ q.id }}/">{{ q.question }}</a></li>#}
+                <li><a href="{% url 'vote:detail' q.id %}">{{ q.question }}</a></li>
+            {% empty %}
+                显示错误
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>
